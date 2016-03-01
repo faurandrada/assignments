@@ -1,1 +1,1 @@
-Repo for the Programming Techniques course
+Repo for the Programming Techniques laboratory
