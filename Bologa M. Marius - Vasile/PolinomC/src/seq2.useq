@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.9" icons="true" automaticImage="PNG">  
+  <object id="1" language="java" name="view.View" project="PolinomC" file="/PolinomC/src/view/View.java" binary="false" 
+    label="view" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="153" y="0"/>    
+    <execution id="2">      
+      <position height="21" width="51" x="5" y="131"/>    
+    </execution>    
+    <execution id="3">      
+      <position height="63" width="51" x="5" y="240"/>    
+    </execution>    
+    <execution id="6">      
+      <position height="21" width="51" x="5" y="412"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="21" width="51" x="5" y="492"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="21" width="51" x="5" y="377"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="21" width="51" x="5" y="480"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="21" width="51" x="5" y="183"/>    
+    </execution>  
+  </object>  
+  <object id="11" language="java" name="utilities.Utilities" project="PolinomC" 
+    file="/PolinomC/src/utilities/Utilities.java" binary="false" label="utilities" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="295" y="0"/>    
+    <execution id="5">      
+      <position height="21" width="65" x="178" y="261"/>    
+    </execution>    
+    <execution id="12">      
+      <position height="63" width="65" x="178" y="356"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="63" width="65" x="178" y="459"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="65" x="60" y="184"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="63" width="65" x="60" y="162"/>    
+    </execution>  
+  </object>  
+  <object id="19" language="java" name="utilities.PolynomFactory" project="PolinomC" 
+    file="/PolinomC/src/utilities/PolynomFactory.java" binary="false" label="polynomFactory" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="239" y="0"/>    
+    <execution id="20">      
+      <position height="63" width="114" x="60" y="110"/>    
+    </execution>    
+    <execution id="22">      
+      <position height="21" width="114" x="60" y="192"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="21" width="114" x="60" y="309"/>    
+    </execution>  
+  </object>  
+  <object id="24" language="java" name="models.Polynomial" project="PolinomC" 
+    file="/PolinomC/src/models/Polynomial.java" binary="false" label="polynomial" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="353" y="0"/>    
+    <execution id="25">      
+      <position height="21" width="85" x="247" y="159"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="63" width="85" x="247" y="163"/>    
+    </execution>  
+  </object>  
+  <object id="28" language="java" name="models.Operation" project="PolinomC" file="/PolinomC/src/models/Operation.java" 
+    binary="false" label="operation" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="480" y="0"/>    
+    <execution id="29">      
+      <position height="21" width="79" x="336" y="281"/>    
+    </execution>    
+    <execution id="30">      
+      <position height="63" width="79" x="425" y="138"/>    
+    </execution>  
+  </object>  
+  <object id="32" language="java" name="controllers.ManageOperations" project="PolinomC" 
+    file="/PolinomC/src/controllers/ManageOperations.java" binary="false" label="manageOperations" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="550" y="0"/>    
+    <execution id="33">      
+      <position height="21" width="131" x="419" y="406"/>    
+    </execution>    
+    <execution id="34">      
+      <position height="63" width="131" x="419" y="260"/>    
+    </execution>  
+  </object>  
+  <object id="36" language="java" name="controllers.MainController" project="PolinomC" 
+    file="/PolinomC/src/controllers/MainController.java" binary="false" label="mainController" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="617" y="0"/>    
+    <execution id="37">      
+      <position height="63" width="106" x="554" y="123"/>    
+    </execution>  
+  </object>  
+  <object id="40" language="java" name="controllers.Controller.DeleteBListener" project="PolinomC" 
+    file="/PolinomC/src/controllers/Controller.java" binary="false" label="deleteBListener" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="776" y="0"/>    
+    <execution id="41">      
+      <position height="63" width="114" x="664" y="391"/>    
+    </execution>  
+  </object>  
+  <object id="43" language="java" name="controllers.Controller.AddCoefficientForBListener" project="PolinomC" 
+    file="/PolinomC/src/controllers/Controller.java" binary="false" label="addCoefficientForBListener" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="776" y="0"/>    
+    <execution id="44">      
+      <position height="63" width="179" x="900" y="288"/>    
+    </execution>  
+  </object>  
+  <object id="46" language="java" name="controllers.Controller.DeleteAListener" project="PolinomC" 
+    file="/PolinomC/src/controllers/Controller.java" binary="false" label="deleteAListener" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="776" y="0"/>    
+    <execution id="47">      
+      <position height="63" width="114" x="965" y="471"/>    
+    </execution>  
+  </object>  
+  <object id="49" language="java" name="controllers.Controller.AddCoefficientForAListener" project="PolinomC" 
+    file="/PolinomC/src/controllers/Controller.java" binary="false" label="addCoefficientForAListener" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="776" y="0"/>    
+    <execution id="50">      
+      <position height="63" width="179" x="1083" y="171"/>    
+    </execution>    
+    <execution id="52">      
+      <position height="21" width="179" x="1172" y="264"/>    
+    </execution>  
+  </object>  
+  <object id="53" language="java" name="controllers.Controller.OperationsListener" project="PolinomC" 
+    file="/PolinomC/src/controllers/Controller.java" binary="false" label="operationsListener" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="776" y="0"/>    
+    <execution id="54">      
+      <position height="63" width="133" x="1266" y="385"/>    
+    </execution>    
+    <execution id="56">      
+      <position height="21" width="133" x="1355" y="340"/>    
+    </execution>  
+  </object>  
+  <object id="57" language="java" name="controllers.Controller" project="PolinomC" 
+    file="/PolinomC/src/controllers/Controller.java" binary="false" label="controller" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="776" y="0"/>    
+    <execution id="39">      
+      <position height="21" width="79" x="1403" y="144"/>    
+    </execution>    
+    <execution id="58">      
+      <position height="63" width="79" x="1492" y="319"/>    
+    </execution>    
+    <execution id="60">      
+      <position height="63" width="79" x="1492" y="243"/>    
+    </execution>  
+  </object>  
+  <message id="4" operation="toString(models.Polynomial):java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="13" operation="setPolynomialA(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="15" operation="setPolynomialB(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="18" operation="setResult(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="21" operation="getCoef():java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="2"/>  
+  </message>  
+  <message id="27" operation="toString(models.Polynomial):java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="31" operation="Polynomial(models.Coefficient[],int)" asynchronous="false">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="35" operation="addition(models.Polynomial,models.Polynomial):models.Polynomial" asynchronous="false">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="29"/>  
+  </message>  
+  <message id="38" operation="Controller(view.View)" asynchronous="false">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="39"/>  
+  </message>  
+  <message id="42" operation="setResult(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="45" operation="createPolynomial(view.View):models.Polynomial" asynchronous="false">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="48" operation="setResult(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="51" operation="createPolynomial(view.View):models.Polynomial" asynchronous="false">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>  
+  <message id="55" operation="manageOperation(view.View,models.Polynomial,models.Polynomial):void" asynchronous="false">    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="33"/>  
+  </message>  
+  <message id="59" operation="actionPerformed(java.awt.event.ActionEvent):void" asynchronous="false">    
+    <end type="SOURCE" refId="58"/>    
+    <end type="TARGET" refId="56"/>  
+  </message>  
+  <message id="61" operation="actionPerformed(java.awt.event.ActionEvent):void" asynchronous="false">    
+    <end type="SOURCE" refId="60"/>    
+    <end type="TARGET" refId="52"/>  
+  </message>
+</sequence-diagram>
