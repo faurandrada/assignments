@@ -234,8 +234,8 @@ public class Gui extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(this, ERROR, ERROR_POLYNOMIAL, JOptionPane.ERROR_MESSAGE);
 				return;
 			}
-			rezult.setText(decimalFormat.format(
-					operations.findRoot(new IntPolynomial(new PolynomialProcess().getPolynomial(pol1.getText())))));
+			rezult.setText(
+					operations.findRoot(new IntPolynomial(new PolynomialProcess().getPolynomial(pol1.getText()))));
 		} else if (event.getSource() == drawGraph) {
 			polynomialGraph = new Graph();
 			polynomialGraph.setYCoordinates(operations.computeYCoordinatesForGraph(

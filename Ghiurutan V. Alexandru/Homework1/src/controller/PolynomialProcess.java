@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class PolynomialProcess {
 	private int[] pol;
 
-	public int[] getPolynomial(String polynomial) {
+	public int [] getPolynomial(String polynomial) {
 		getDegreeOfPolynomial(polynomial);
 		polynomial = polynomial.replace(regexCheckerExponent("(.*?)(-?)(\\+?)x(\\^?)([0-9]*)", polynomial), "");
 		regexCheckerConstant("(.*)", polynomial);
@@ -33,7 +33,7 @@ public class PolynomialProcess {
 
 	}
 
-	public void regexCheckerConstant(String theRegex, String polynomial) {
+	private void regexCheckerConstant(String theRegex, String polynomial) {
 		Pattern checkRegex = Pattern.compile(theRegex);
 		Matcher regexMatcher = checkRegex.matcher(polynomial);
 		while (regexMatcher.find()) {
@@ -44,7 +44,7 @@ public class PolynomialProcess {
 	}
 
 	// Matching the elements with x
-	public String regexCheckerExponent(String theRegex, String polynomial) {
+	private String regexCheckerExponent(String theRegex, String polynomial) {
 		String rezult = "";
 		int coeff = 0, power = 0;
 		Pattern checkRegex = Pattern.compile(theRegex);

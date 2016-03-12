@@ -1,14 +1,19 @@
 package controller;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
-
 import models.DoublePolynomial;
 
 public class Operations {
-	private static final double EPSILON = 0.0001;
+	private DecimalFormat decimalFormat;
+	private static final double EPSILON = 0.00001;
 	private static final int INFINITY = Integer.MAX_VALUE;
 	private static final int MINUS_INFINITY = Integer.MIN_VALUE;
 	private static final int ITERATIONS = 888;
+
+	public Operations() {
+		decimalFormat = new DecimalFormat();
+	}
 
 	public DoublePolynomial add(DoublePolynomial p1, DoublePolynomial p2) {
 		double[] pol1 = p1.getDoublePolynomial();
@@ -61,8 +66,7 @@ public class Operations {
 		int degP1 = p1.getDegree();
 		int degP2 = p2.getDegree();
 		if (degP1 < degP2 || degP2 == 0) {
-			JOptionPane.showMessageDialog(null, "Error", "Illegal Polynomials entered",
-					JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Error", "Illegal Polynomials entered", JOptionPane.ERROR_MESSAGE);
 			System.exit(0);
 		}
 		int degQ = degP1 - degP2;
@@ -77,7 +81,7 @@ public class Operations {
 			double[] auxPol = new double[i + 1];
 			auxPol[i] = div;
 			quotient[i--] = div;
-		 dividend=subtract(new DoublePolynomial(dividend),
+			dividend = subtract(new DoublePolynomial(dividend),
 					multiply(new DoublePolynomial(pol2), new DoublePolynomial(auxPol))).getDoublePolynomial();
 		} while (j >= degP2);
 		DoublePolynomial[] result = new DoublePolynomial[] { new DoublePolynomial(quotient),
@@ -147,17 +151,17 @@ public class Operations {
 	}
 
 	// Optional
-	private double[] findInterval(DoublePolynomial p) {
-		double[] interval = new double[2];
+	private int[] findInterval(DoublePolynomial p) {
+		int[] interval = new int[2];
 		int n = 0;
-		interval[0] = Math.random() * 1000;
-		interval[1] = Math.random() * 1000 + interval[0];
+		interval[0] = (int) (Math.random() * 100);
+		interval[1] = (int) (Math.random() * 100) + interval[0];
 		while (n < ITERATIONS) {
 			if (evaluate(p, interval[0]) * evaluate(p, interval[1]) <= 0) {
 				return interval;
 			} else {
-				interval[0]++;
-				interval[1]--;
+				interval[0]--;
+				interval[1]++;
 				n++;
 			}
 		}
@@ -167,8 +171,8 @@ public class Operations {
 	}
 
 	// finding root using the Bisection Method.
-	public Double findRoot(DoublePolynomial p) {
-		double[] interval = findInterval(p);
+	private  Double findRootAlgorithm(DoublePolynomial p) {
+		int[] interval = findInterval(p);
 		double a = interval[0];
 		double b = interval[1];
 		double m;
@@ -185,7 +189,16 @@ public class Operations {
 			}
 		}
 		m = (a + b) / 2;
-			return m;
+		return m;
+	}
+
+	public String findRoot(DoublePolynomial p) {
+		double rezult = findRootAlgorithm(p);
+		if (rezult >2000000000 || rezult <-2000000000) {
+			return "Polynomial doesn't have real roots.";
+		} else {
+			return decimalFormat.format(rezult);
+		}
 	}
 
 	// Graph representation methods
