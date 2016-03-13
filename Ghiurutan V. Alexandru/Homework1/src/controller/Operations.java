@@ -3,7 +3,11 @@ package controller;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import models.DoublePolynomial;
-
+/**
+ * 
+ * @author Ghiurutan
+ *Class that performs all the operations in the polynomial.
+ */
 public class Operations {
 	private DecimalFormat decimalFormat;
 	private static final double EPSILON = 0.00001;

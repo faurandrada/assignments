@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
  * 
  * @author Ghiurutan This class transforms the input from Gui into a coefficient
  *         array.
+ *         
  */
 public class PolynomialProcess {
 	private int[] pol;

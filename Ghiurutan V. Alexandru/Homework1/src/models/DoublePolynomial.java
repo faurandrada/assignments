@@ -3,7 +3,7 @@ package models;
 import controller.Helper;
 
 /**
- * 
+ * Class that performs the polynomial modeling.
  * @author Alexandru
  *
  */

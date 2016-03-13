@@ -1,7 +1,12 @@
 package controller;
 
 import java.text.DecimalFormat;
-
+/**
+ * 
+ * @author Ghiurutan
+ *Helper class
+ *
+ */
 public class Helper {
 
 	public String toString(double[] coeffs, int degree) {

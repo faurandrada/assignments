@@ -14,7 +14,11 @@ import models.DoublePolynomial;
 import models.IntPolynomial;
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
-
+/**
+ * The class that contains the graphical user interface.
+ * @author Ghiurutan
+ *
+ */
 public class Gui extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 211431534849779406L;
 	private static String ERROR = "Error";

@@ -7,6 +7,7 @@ import java.awt.geom.GeneralPath;
 /**
  * 
  * @author Ghiurutan Draw graph class.
+ * 
  */
 @SuppressWarnings("serial")
 public class Graph extends JPanel {
