@@ -40,38 +40,37 @@ public class ProcessingFrame {
 	private static final int LINE_BORDER_THICKNESS = 3;
 
 	public JFrame frame;
+	public JButton[] arithOp;
+	public JButton backButton;
+	public BasicArrowButton[] buttonsP1;
+	public BasicArrowButton[] buttonsP2;
+	
 	private JLabel jLabelP1;
 	private JLabel jLabelP2;
 	private JLabel jLabelP3;
 	private JLabel jLabelResult;
-	public JPanel jPanelLine1;
-	public JPanel jPanelLine2;
-	public JPanel jPanelLine3;
-	public JPanel jPanelLine4; // arithOp + back button line
+	private JPanel jPanelLine1;
+	private JPanel jPanelLine2;
+	private JPanel jPanelLine3;
+	private JPanel jPanelLine4; // arithOp + back button line
 
-	public JPanel jPanelPlusMinus;
-	public JPanel jPanelMulDiv;
-	public JPanel jPanelDiffInt;
+	private JPanel jPanelPlusMinus;
+	private JPanel jPanelMulDiv;
+	private JPanel jPanelDiffInt;
 
-	public JButton[] arithOp;
+	private JPanel[] jPanelButtonsP1;
+	private JPanel[] jPanelButtonsP2;
 
-	public JButton backButton;
+	private JLabel[] jLabelCoeffP1;
+	private JLabel[] jLabelCoeffP2;
 
-	public BasicArrowButton[] buttonsP1;
-	public BasicArrowButton[] buttonsP2;
-	public JPanel[] jPanelButtonsP1;
-	public JPanel[] jPanelButtonsP2;
-
-	public JLabel[] jLabelCoeffP1;
-	public JLabel[] jLabelCoeffP2;
-
-	public JLabel[] jLabelPowersOfX1;
-	public JLabel[] jLabelPowersOfX2;
+	private JLabel[] jLabelPowersOfX1;
+	private JLabel[] jLabelPowersOfX2;
 
 	public ProcessingFrame(int degree1, int degree2) {
 		frame = new JFrame("Polynomials Processing");
-		jLabelP1 = new JLabel("P(x)=");
-		jLabelP2 = new JLabel("Q(x)=");
+		jLabelP1 = new JLabel("P1(x)=");
+		jLabelP2 = new JLabel("P2(x)=");
 		jLabelP3 = new JLabel("R(x)=");
 
 		jPanelLine1 = new JPanel();

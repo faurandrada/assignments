@@ -23,8 +23,8 @@ public class DegreeFrame implements ChangeListener {
 	private static final int MAX_GRADE = 20;
 
 	public JFrame frame;
-	private JSlider jSliderGrade1;
-	private JSlider jSliderGrade2;
+	private JSlider jSliderDegree1;
+	private JSlider jSliderDegree2;
 	private JLabel jLabelGrade1;
 	private JLabel jLabelGrade2;
 	public JButton okButton;
@@ -41,24 +41,24 @@ public class DegreeFrame implements ChangeListener {
 		okButton = new JButton("OK");
 		// okButton.addActionListener((ActionListener) this);
 
-		jSliderGrade1 = new JSlider(JSlider.HORIZONTAL, 0, MAX_GRADE, INITIAL_DEGREE1);
-		jSliderGrade1.setMinorTickSpacing(1);
-		jSliderGrade1.setMajorTickSpacing(2);
-		jSliderGrade1.setPaintTicks(true);
-		jSliderGrade1.setPaintLabels(true);
-		jSliderGrade1.addChangeListener((ChangeListener) this);
+		jSliderDegree1 = new JSlider(JSlider.HORIZONTAL, 0, MAX_GRADE, INITIAL_DEGREE1);
+		jSliderDegree1.setMinorTickSpacing(1);
+		jSliderDegree1.setMajorTickSpacing(2);
+		jSliderDegree1.setPaintTicks(true);
+		jSliderDegree1.setPaintLabels(true);
+		jSliderDegree1.addChangeListener((ChangeListener) this);
 
-		jSliderGrade2 = new JSlider(JSlider.HORIZONTAL, 0, MAX_GRADE, INITIAL_DEGREE2);
-		jSliderGrade2.setMinorTickSpacing(1);
-		jSliderGrade2.setMajorTickSpacing(2);
-		jSliderGrade2.setPaintTicks(true);
-		jSliderGrade2.setPaintLabels(true);
-		jSliderGrade2.addChangeListener((ChangeListener) this);
+		jSliderDegree2 = new JSlider(JSlider.HORIZONTAL, 0, MAX_GRADE, INITIAL_DEGREE2);
+		jSliderDegree2.setMinorTickSpacing(1);
+		jSliderDegree2.setMajorTickSpacing(2);
+		jSliderDegree2.setPaintTicks(true);
+		jSliderDegree2.setPaintLabels(true);
+		jSliderDegree2.addChangeListener((ChangeListener) this);
 
 		frame.add(jLabelGrade1);
-		frame.add(jSliderGrade1);
+		frame.add(jSliderDegree1);
 		frame.add(jLabelGrade2);
-		frame.add(jSliderGrade2);
+		frame.add(jSliderDegree2);
 		frame.add(okButton);
 		frame.setLayout(new GridLayout(5, 1));
 
@@ -69,14 +69,14 @@ public class DegreeFrame implements ChangeListener {
 	}
 
 	public void stateChanged(ChangeEvent event) {
-		if (event.getSource() == jSliderGrade1) {
-			if (!jSliderGrade1.getValueIsAdjusting()) {
-				degree1 = (int) jSliderGrade1.getValue();
+		if (event.getSource() == jSliderDegree1) {
+			if (!jSliderDegree1.getValueIsAdjusting()) {
+				degree1 = (int) jSliderDegree1.getValue();
 				System.out.println("" + degree1 + " " + degree2);
 			}
-		} else if (event.getSource() == jSliderGrade2) {
-			if (!jSliderGrade2.getValueIsAdjusting()) {
-				degree2 = (int) jSliderGrade2.getValue();
+		} else if (event.getSource() == jSliderDegree2) {
+			if (!jSliderDegree2.getValueIsAdjusting()) {
+				degree2 = (int) jSliderDegree2.getValue();
 				System.out.println("" + degree1 + " " + degree2);
 			}
 		}

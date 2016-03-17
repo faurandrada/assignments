@@ -13,7 +13,7 @@ import poly.IO.DegreeFrame;
  */
 public class App implements Runnable {
 
-	public DegreeFrame degreeFrame;
+	private DegreeFrame degreeFrame;
 
 	public App() {
 		this.degreeFrame = new DegreeFrame();
