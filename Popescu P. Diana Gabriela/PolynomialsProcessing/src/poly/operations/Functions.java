@@ -29,7 +29,7 @@ public class Functions {
 		return result;
 	}
 
-	public Polynomial difference(Polynomial p1, Polynomial p2) {
+	public Polynomial subtraction(Polynomial p1, Polynomial p2) {
 		Polynomial result = new Polynomial(maxDegree(p1.degree, p2.degree));
 
 		for (int i = 0; i <= result.degree; i++) {
@@ -119,7 +119,7 @@ public class Functions {
 		return result;
 	}
 
-	public int maxDegree(int a, int b) {
+	private int maxDegree(int a, int b) {
 		if (a > b)
 			return a;
 		return b;

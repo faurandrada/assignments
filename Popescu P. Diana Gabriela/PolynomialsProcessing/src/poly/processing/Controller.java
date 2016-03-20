@@ -23,15 +23,15 @@ public class Controller implements ActionListener {
 	private DegreeFrame degreeFrame;
 	private ProcessingFrame processingFrame;
 	private Polynomial p1, p2, result;
-	private Functions func;
-	private ConsolePrinter cP;
+	private Functions function;
+	private ConsolePrinter consolePrinter;
 
 	public Controller(DegreeFrame degreeFrame) {
 		this.degreeFrame = degreeFrame;
 		degreeFrame.okButton.addActionListener(this);
 
-		cP = new ConsolePrinter();
-		func = new Functions();
+		consolePrinter = new ConsolePrinter();
+		function = new Functions();
 	}
 
 	@Override
@@ -66,17 +66,17 @@ public class Controller implements ActionListener {
 			int found = findSourceArithOp(source);
 			if (found != -1) {
 				if (found == ProcessingFrame.PLUS) {
-					result = func.sum(p1, p2);
+					result = function.sum(p1, p2);
 				} else if (found == ProcessingFrame.MINUS) {
-					result = func.difference(p1, p2);
+					result = function.subtraction(p1, p2);
 				} else if (found == ProcessingFrame.MUL) {
-					result = func.multiply(p1, p2);
+					result = function.multiply(p1, p2);
 				} else if (found == ProcessingFrame.DIV) {
-					result = func.divide(p1, p2);
+					result = function.divide(p1, p2);
 				} else if (found == ProcessingFrame.DIFF) {
-					result = func.differentiate(p1);
+					result = function.differentiate(p1);
 				} else {
-					result = func.integrate(p1);
+					result = function.integrate(p1);
 				}
 				// result.normalizePoly();
 				processingFrame.updateOutput(result);
@@ -110,13 +110,13 @@ public class Controller implements ActionListener {
 				}
 				processingFrame.updateInputs(p1, p2);
 				processingFrame.updateDivideButton(p1, p2);
-				cP.printPolynomial(p1);
-				cP.printPolynomial(p2);
+				consolePrinter.printPolynomial(p1);
+				consolePrinter.printPolynomial(p2);
 			}
 		}
 	}
 
-	public int findSourceP1(Object source) {
+	private int findSourceP1(Object source) {
 		for (int i = 0; i <= degreeFrame.degree1 * 2 + 1; i++) {
 			if (processingFrame.buttonsP1[i] == source)
 				return i;
@@ -124,7 +124,7 @@ public class Controller implements ActionListener {
 		return -1;
 	}
 
-	public int findSourceP2(Object source) {
+	private int findSourceP2(Object source) {
 		for (int i = 0; i <= degreeFrame.degree2 * 2 + 1; i++) {
 			if (processingFrame.buttonsP2[i] == source)
 				return i;
@@ -132,7 +132,7 @@ public class Controller implements ActionListener {
 		return -1;
 	}
 
-	public int findSourceArithOp(Object source) {
+	private int findSourceArithOp(Object source) {
 		for (int i = 0; i < ProcessingFrame.NR_OF_OP; i++) {
 			if (processingFrame.arithOp[i] == source)
 				return i;
