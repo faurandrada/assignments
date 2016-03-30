@@ -10,6 +10,8 @@ public class Warehouse {
 	private TreeSet<Product> warehouse;
 	private InputOutput inOut;
 	private Iterator<Product> iterator;
+	private static final int MAXIMUM_STOCK = 1000;
+	private static final int MINIMUM_STOCK = 100;
 
 	private Warehouse() {
 		inOut = new InputOutput();
@@ -21,6 +23,14 @@ public class Warehouse {
 			instance = new Warehouse();
 		}
 		return instance;
+	}
+
+	public static int getMaximumStock() {
+		return MAXIMUM_STOCK;
+	}
+
+	public static int getMinimumStock() {
+		return MINIMUM_STOCK;
 	}
 
 	public void addProduct(Product product) {
@@ -47,11 +57,16 @@ public class Warehouse {
 	}
 
 	public int getTotalNumberOfProducts() {
-		return warehouse.size();
+		int total = 0;
+		iterator = warehouse.iterator();
+		while (iterator.hasNext()) {
+			total += iterator.next().getStock();
+		}
+		return total;
 	}
 
 	public Product[] getAllProducts() {
-		int size = this.getTotalNumberOfProducts(), index = 0;
+		int size = warehouse.size(), index = 0;
 		if (size != 0) {
 			Product[] products = new Product[size];
 			iterator = warehouse.iterator();

@@ -40,7 +40,7 @@ public class OrdersView extends JFrame {
 		scrollPane = new JScrollPane(table);
 		refreshStatus();
 		this.add(scrollPane, BorderLayout.NORTH);
-		this.pack();
+		this.setSize(650,350);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setVisible(true);

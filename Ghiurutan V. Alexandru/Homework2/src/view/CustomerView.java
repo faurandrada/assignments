@@ -181,10 +181,17 @@ public class CustomerView extends JFrame implements ActionListener {
 			new Gui();
 		} else if (event.getSource() == buy) {
 			if (checkFields()) {
-				int number = Integer.valueOf(numberText.getText());
+				int number, newStock;
+				number = Integer.valueOf(numberText.getText());
 				product = new Product(nameText.getText(), companyText.getText(), Double.valueOf(priceText.getText()),
 						number);
-				if ((number > 0) && (number <= warehouse.getProductStock(product))) {
+				newStock = warehouse.getTotalNumberOfProducts() - number;
+				if (newStock < Warehouse.getMinimumStock()) {
+					JOptionPane.showMessageDialog(this,
+							"The warehouse is going under the stock: " + Warehouse.getMinimumStock()
+									+ " ,after selling " + number + " ,products.",
+							"UNDERSTOCK", JOptionPane.INFORMATION_MESSAGE);
+				} else if ((number > 0) && (number <= warehouse.getProductStock(product))) {
 					warehouse.sellProduct(product);
 					orderProcessing.addOrder(product, customer);
 					updateTable();

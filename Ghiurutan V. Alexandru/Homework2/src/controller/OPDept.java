@@ -62,7 +62,6 @@ public class OPDept {
 			@Override
 			public void run() {
 				order.setStatus(getNextStatus(order));
-				System.out.println(order.getCommandStatus());
 				inOut.serializeOrders();
 			}
 		}, 5000);
@@ -70,7 +69,6 @@ public class OPDept {
 			@Override
 			public void run() {
 				order.setStatus(getNextStatus(order));
-				System.out.println(order.getCommandStatus());
 				inOut.serializeOrders();
 			}
 		}, 10000);

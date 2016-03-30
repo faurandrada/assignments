@@ -181,13 +181,23 @@ public class UserView extends JFrame implements ActionListener {
 			new Gui();
 		} else if (event.getSource() == add) {
 			if (checkFields()) {
+				int newStock;
 				name = nameText.getText();
 				company = companyText.getText();
 				price = priceText.getText();
 				stock = numberText.getText();
-				product = new Product(name, company, Double.valueOf(price), Integer.valueOf(stock));
-				warehouse.addProduct(product);
-				updateTable();
+				newStock = Integer.valueOf(stock) + warehouse.getTotalNumberOfProducts();
+				if (newStock > Warehouse.getMaximumStock()) {
+					JOptionPane
+							.showMessageDialog(this,
+									"After adding " + stock + " ,you will exceed the maximum stock: "
+											+ Warehouse.getMaximumStock(),
+									"OVERSTOCK", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					product = new Product(name, company, Double.valueOf(price), Integer.valueOf(stock));
+					warehouse.addProduct(product);
+					updateTable();
+				}
 			}
 		} else if (event.getSource() == remove) {
 			if (checkForSearch()) {
