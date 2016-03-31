@@ -1,0 +1,8 @@
+iPhone 145
+Samsung 231
+Sony 288
+HTC 302
+LG 98
+Huawei 21
+Allview 90
+Thing 21
