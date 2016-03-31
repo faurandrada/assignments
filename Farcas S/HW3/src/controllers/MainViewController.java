@@ -3,6 +3,7 @@ package controllers;
 import views.*;
 
 import java.awt.event.*;
+import java.util.*;
 
 import javax.swing.*;
 
@@ -16,6 +17,8 @@ import models.*;
  */
 public class MainViewController {
 
+	private static volatile boolean isCancelled = false;
+	
 	private MainView mainView;
 
 	public MainViewController(MainView mainView) {
@@ -25,15 +28,23 @@ public class MainViewController {
 
 	/**
 	 * 
-	 * The refresh thread
+	 * The refresh swing worker
 	 *
 	 */
-	public class Refresh implements Runnable {
+	
+	public class Refresh extends SwingWorker<Void, Void> {
 		@Override
-		public void run() {
-			while(true){
-				mainView.refresh();
-			}
+        protected Void doInBackground() {
+			mainView.getStart().setEnabled(false);
+            while (!isCancelled) {
+                publish();
+            }
+            mainView.getStart().setEnabled(true);
+            return null;
+        }
+		@Override
+		protected void process(List<Void> lv) {
+		    mainView.refresh();
 		}
 	}
 	
@@ -45,8 +56,7 @@ public class MainViewController {
 	public class StartButtonActionListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			Thread refresh = new Thread(new Refresh());
-			refresh.start();
+			isCancelled = false;
 			TaskGenerator.deleteInstance();
 			TaskScheduler.deleteInstance();
 			TaskGenerator.getInstance()
@@ -61,9 +71,15 @@ public class MainViewController {
 			TaskScheduler.getInstance()
 					.setSimulationTime(Long.parseLong(mainView.getSimulationInterval().getText()) * 1000);
 			TaskScheduler.getInstance().setNumberOfServers(Integer.parseInt(mainView.getNumberOfQueues().getText()));
+			Refresh refresh = new Refresh();
+			refresh.execute();
 			Thread t = new Thread(TaskGenerator.getInstance());
 			t.start();
 		}
 	}
 
+	public static void setCancelled(boolean isCancelled) {
+		MainViewController.isCancelled = isCancelled;
+	}
+	
 }

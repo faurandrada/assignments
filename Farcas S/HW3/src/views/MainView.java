@@ -96,6 +96,9 @@ public class MainView extends JFrame{
 	public JTextField getMaxLoadPerServer() {
 		return maxLoadPerServer;
 	}
-	
+
+	public JButton getStart() {
+		return start;
+	}
 	
 }

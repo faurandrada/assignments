@@ -76,7 +76,6 @@ public class TaskScheduler {
 	 */
 	public void receiveTask(Task task) {
 		MainView.getLogging().append(task.getName() + " has arrived. \n");
-		System.out.println(task.getName() + " has arrived.");
 		customersArrived.add(task);
 		Operations.getCustomerHistory().add(task);
 		currentCustomers.getAndIncrement();

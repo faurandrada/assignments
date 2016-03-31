@@ -2,6 +2,7 @@ package models;
 
 import java.util.Random;
 
+import controllers.MainViewController;
 import views.MainView;
 
 /**
@@ -57,6 +58,7 @@ public class TaskGenerator implements Runnable {
 		for(Thread t: TaskScheduler.getInstance().getRunningServers()){
 				t.interrupt();
 		}
+		MainViewController.setCancelled(true);
 		MainView.getLogging().append(String.format("Peak hour: %tT with number of customers: %d\n", TaskScheduler.getInstance().getPeakHour(), TaskScheduler.getInstance().getPeakHourCustomers()));
 		MainView.getLogging().append("Average service time for simulation interval: " + Operations.getAverageServiceTime()/1000 + "\n");
 		MainView.getLogging().append("Average waiting time for simulation interval: " + Operations.getAverageWaitingTime()/1000 + "\n");
