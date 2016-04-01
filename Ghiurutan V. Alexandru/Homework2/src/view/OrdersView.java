@@ -25,7 +25,7 @@ public class OrdersView extends JFrame {
 	private Product product;
 	private DecimalFormat decimalFormat;
 	private JTable table;
-	private static Timer timer;
+	private Timer timer;
 	private DefaultTableModel tableModel;
 	private JScrollPane scrollPane;
 
@@ -81,7 +81,7 @@ public class OrdersView extends JFrame {
 		}, 1000, 1000);
 	}
 
-	public static void stopTimer() {
+	public  void stopTimer() {
 		timer.cancel();
 	}
 
