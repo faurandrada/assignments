@@ -77,7 +77,7 @@ public class CustomerWindow extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String myPass = String.valueOf(text2.getPassword());
 		if (e.getSource() == ok) {
-			if ((text1.getText().equals("1")) && (myPass.equals("1"))) {
+			if ((text1.getText().equals("dari_lu44@yahoo.com")) && (myPass.equals("dariana"))) {
 				System.out.println("goooood");
 				dispose();
 				new ShopWindow();

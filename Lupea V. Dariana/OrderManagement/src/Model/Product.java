@@ -2,6 +2,11 @@ package Model;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * @author Dariana Lupea
+ *
+ */
 public class Product implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -28,13 +33,13 @@ public class Product implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public int getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {
