@@ -9,6 +9,11 @@ import java.text.DecimalFormat;
 import controller.Warehouse;
 import models.Product;
 
+/**
+ * 
+ * @author Ghiurutan. The class in which the graphical user interface of
+ *         UserView is created.
+ */
 public class UserView extends JFrame implements ActionListener {
 	private static final long serialVersionUID = -7882841254291370031L;
 	private JTable table;

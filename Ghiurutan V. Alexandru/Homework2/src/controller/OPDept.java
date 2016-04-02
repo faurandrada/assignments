@@ -8,7 +8,11 @@ import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.TreeSet;
-
+/**
+ * 
+ * @author Ghiurutan
+ * The Order Processing Department class
+ */
 public class OPDept {
 
 	private static OPDept instance;

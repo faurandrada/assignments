@@ -1,5 +1,7 @@
 package controller;
-
+/**
+ * The class that helps serialization
+ */
 import java.io.*;
 import java.util.TreeSet;
 

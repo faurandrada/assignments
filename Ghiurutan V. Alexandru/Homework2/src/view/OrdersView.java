@@ -12,6 +12,10 @@ import models.Order;
 import models.Product;
 import models.Status;
 
+/**
+ * 
+ * @author Ghiurutan .The class in which the Orders are displayed in a JTable.
+ */
 public class OrdersView extends JFrame {
 	private static final long serialVersionUID = -5369998738754443367L;
 	private OPDept orderProcessing;
@@ -40,7 +44,7 @@ public class OrdersView extends JFrame {
 		scrollPane = new JScrollPane(table);
 		refreshStatus();
 		this.add(scrollPane, BorderLayout.NORTH);
-		this.setSize(650,350);
+		this.setSize(650, 350);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setVisible(true);
@@ -81,7 +85,7 @@ public class OrdersView extends JFrame {
 		}, 1000, 1000);
 	}
 
-	public  void stopTimer() {
+	public void stopTimer() {
 		timer.cancel();
 	}
 

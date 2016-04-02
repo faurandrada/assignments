@@ -5,7 +5,9 @@ import java.util.TreeSet;
 import models.Product;
 
 public class Warehouse {
-
+/**
+ * The class that holds all products
+ */
 	public static Warehouse instance;
 	private TreeSet<Product> warehouse;
 	private InputOutput inOut;

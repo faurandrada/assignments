@@ -45,7 +45,6 @@ public class CustomerView extends JFrame implements ActionListener {
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
-
 	}
 
 	private void fillTable() {

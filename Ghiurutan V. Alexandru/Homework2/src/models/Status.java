@@ -1,5 +1,6 @@
 package models;
 
 public enum Status {
-PENDING,PROCESSING,SENT
+	PENDING, PROCESSING, SENT
+
 }

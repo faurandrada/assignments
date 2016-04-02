@@ -1,5 +1,9 @@
 package models;
-
+/**
+ * 
+ * @author Ghiurutan
+ *The class of Customer
+ */
 public class Customer {
 	private String firstName;
 	private String lastName;

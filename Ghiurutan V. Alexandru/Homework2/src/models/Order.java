@@ -2,7 +2,11 @@ package models;
 
 import models.Product;
 import java.io.Serializable;
-
+/**
+ * 
+ * @author Ghiurutan
+ *The Order class that creates orders of the customer.
+ */
 public class Order implements Serializable, Comparable<Order> {
 	private static final long serialVersionUID = -2328908218015604885L;
 	private Status commandStatus;
