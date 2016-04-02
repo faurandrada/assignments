@@ -60,16 +60,16 @@ public class MainViewController {
 			TaskGenerator.deleteInstance();
 			TaskScheduler.deleteInstance();
 			TaskGenerator.getInstance()
-					.setMaxServiceTime(Long.parseLong(mainView.getMaxServiceTime().getText()) * 1000);
+					.setMaxServiceTime(Long.parseLong(mainView.getMaxServiceTime().getText()));
 			TaskGenerator.getInstance()
-					.setMinServiceTime(Long.parseLong(mainView.getMinServiceTime().getText()) * 1000);
+					.setMinServiceTime(Long.parseLong(mainView.getMinServiceTime().getText()));
 			TaskGenerator.getInstance()
-					.setMaxArrivalInterval(Long.parseLong(mainView.getMaxArrivalInterval().getText()) * 1000);
+					.setMaxArrivalInterval(Long.parseLong(mainView.getMaxArrivalInterval().getText()));
 			TaskGenerator.getInstance()
-					.setMinArrivalInterval(Long.parseLong(mainView.getMinArrivalInterval().getText()) * 1000);
+					.setMinArrivalInterval(Long.parseLong(mainView.getMinArrivalInterval().getText()));
 			TaskScheduler.getInstance().setMaxLoadPerServer(Integer.parseInt(mainView.getMaxLoadPerServer().getText()));
 			TaskScheduler.getInstance()
-					.setSimulationTime(Long.parseLong(mainView.getSimulationInterval().getText()) * 1000);
+					.setSimulationTime(Long.parseLong(mainView.getSimulationInterval().getText()));
 			TaskScheduler.getInstance().setNumberOfServers(Integer.parseInt(mainView.getNumberOfQueues().getText()));
 			Refresh refresh = new Refresh();
 			refresh.execute();

@@ -34,13 +34,13 @@ public class MainView extends JFrame{
 		maxServiceTime.setPreferredSize(dim);
 		maxLoadPerServer.setPreferredSize(dim);
 		start.setPreferredSize(dim);
-		queueEvolution.setPreferredSize(new Dimension(400, 200));
+		queueEvolution.setPreferredSize(new Dimension(800, 250));
 		logging.setLineWrap(true);
 	    logging.setEditable(false);
 	    scrollLogging = new JScrollPane(logging);
-	    scrollLogging.setPreferredSize(new Dimension(400, 100));
+	    scrollLogging.setPreferredSize(new Dimension(800, 100));
 		scrollLogging.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		setSize(500, 500);
+		setSize(1000, 500);
 		add(queueEvolution);
 		add(numberOfQueues);
 		add(maxLoadPerServer);

@@ -16,7 +16,7 @@ public class QueueEvolution extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setColor(Color.BLUE);
-		g.fillRect(0, 0, 400, 200);
+		g.fillRect(0, 0, 800, 250);
 		servers = TaskScheduler.getInstance().getServers();
 		int i, j;
 		for (i = 0; i < servers.size(); i++) {

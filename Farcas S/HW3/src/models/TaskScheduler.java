@@ -23,6 +23,9 @@ public class TaskScheduler {
 	private Date peakHour = new Date();
 	private AtomicInteger currentCustomers = new AtomicInteger(0);
 	private int peakHourCustomers;
+	private long serverShutdownTime;
+	private Server serverShutdown;
+	private Thread threadServerShutdown;
 
 	private TaskScheduler() {
 	}
@@ -31,15 +34,20 @@ public class TaskScheduler {
 	 * initialization
 	 */
 	public void start() {
+		int i;
 		Operations.setCustomerHistory(new ArrayBlockingQueue<Task>(
 				(int) (simulationTime / TaskGenerator.getInstance().getMinArrivalInterval())));
-		for (int i = 1; i <= numberOfServers; i++) {
+		for (i = 1; i <= numberOfServers; i++) {
 			Server s = new Server("Queue " + ++serverNumber, maxLoadPerServer);
 			servers.add(s);
 			Thread t = new Thread(s);
 			runningServers.add(t);
 			t.start();
 		}
+		serverShutdownTime = (long) (new Random().nextDouble() * (simulationTime) + startTime + 1);
+		i = new Random().nextInt(numberOfServers);
+		serverShutdown = servers.get(i);
+		threadServerShutdown = runningServers.get(i);		
 	}
 
 	public static TaskScheduler getInstance() {
@@ -55,6 +63,7 @@ public class TaskScheduler {
 
 	/**
 	 * get queue with least customers
+	 * 
 	 * @return
 	 */
 	public Server getServerWithMinNumberOfTasks() {
@@ -72,22 +81,26 @@ public class TaskScheduler {
 
 	/**
 	 * the task receiver -> delegates tasks to servers
+	 * 
 	 * @param task
 	 */
 	public void receiveTask(Task task) {
-		MainView.getLogging().append(task.getName() + " has arrived. \n");
 		customersArrived.add(task);
-		Operations.getCustomerHistory().add(task);
-		currentCustomers.getAndIncrement();
-		if (currentCustomers.get() > peakHourCustomers) {
-			peakHourCustomers = currentCustomers.get();
-			peakHour = new Date();
+		if (!(task.isRescheduled())) {
+			MainView.getLogging().append(task.getName() + " has arrived at time " + String.format("%tT", new Date(System.currentTimeMillis())) + "\n");
+			Operations.getCustomerHistory().add(task);
+			currentCustomers.getAndIncrement();
+			if (currentCustomers.get() > peakHourCustomers) {
+				peakHourCustomers = currentCustomers.get();
+				peakHour = new Date();
+			}
 		}
 		Server s = getServerWithMinNumberOfTasks();
-		if (s != null) {
+		if (s != null && !(s.isShutdown())) {
 			try {
 				Task taskToBeAdded = customersArrived.get(0);
-				MainView.getLogging().append(taskToBeAdded.getName() + " has entered " + s.getName() + "\n");
+				MainView.getLogging().append(taskToBeAdded.getName() + " has entered " + s.getName() + " at time "
+						+ String.format("%tT", new Date(System.currentTimeMillis())) + "\n");
 				taskToBeAdded.setQueue(s);
 				s.getTasks().put(taskToBeAdded);
 				customersArrived.remove(0);
@@ -150,4 +163,16 @@ public class TaskScheduler {
 		return servers;
 	}
 
+	public long getServerShutdownTime() {
+		return serverShutdownTime;
+	}
+
+	public Server getServerShutdown() {
+		return serverShutdown;
+	}
+
+	public Thread getThreadServerShutdown() {
+		return threadServerShutdown;
+	}
+	
 }
