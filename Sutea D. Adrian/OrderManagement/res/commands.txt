@@ -1,0 +1,6 @@
+ady Allview 10
+ady iPhone 11
+ady LG 7
+aaa LG 7
+aaa Huawei 3
+ady Thing 8
