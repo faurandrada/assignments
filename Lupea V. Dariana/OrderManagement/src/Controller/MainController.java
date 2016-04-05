@@ -1,16 +1,17 @@
 package Controller;
 
-import View.ShopWindow;
+import View.FirstWindow;
+/**
+ * 
+ * @author Dariana Lupea
+ * This class starts the application.
+ *
+ */
 
-public class MainController{
+public class MainController {
 
-	public static void main(String[] args){
-		//new FirstWindow();
-		//new StockWindow();
-		//new CheckDataValidity();
-		//new CustomerWindow();
-	    //new Try();
-	    new ShopWindow();
+	public static void main(String[] args) {
+        new FirstWindow();
 	}
 
 }

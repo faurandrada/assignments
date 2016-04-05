@@ -24,10 +24,10 @@ public class AdminWindow extends JFrame implements ActionListener {
 	private JButton ok;
 
 	public AdminWindow() {
-		super("User Login");
+		super("Admin Login");
 		panel1 = new JPanel();
 		panel1.setLayout(new GridBagLayout());
-		email = new JLabel("UserID: ");
+		email = new JLabel("AdminName: ");
 		password = new JLabel("Password: ");
 		text1 = new JTextField();
 		text1.setPreferredSize(new Dimension(200, 24));
@@ -67,7 +67,7 @@ public class AdminWindow extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		String myPass = String.valueOf(text2.getPassword());
 		if (event.getSource() == ok) {
-			if ((text1.getText().equals("1")) && (myPass.equals("1"))) {
+			if ((text1.getText().equals("Dari")) && (myPass.equals("dariana"))) {
 				System.out.println("goooood");
 				dispose();
 				new StockWindow();
