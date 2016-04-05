@@ -11,6 +11,7 @@ public class Task {
 	private long waitingTime = -1;
 	private Server queue = null;
 	private String name;
+	private boolean rescheduled = false;
 	
 	public Task(long arrivalTime, long serviceTime, String name){
 		this.arrivalTime = arrivalTime;
@@ -61,4 +62,13 @@ public class Task {
 	public void setQueue(Server queue) {
 		this.queue = queue;
 	}
+
+	public boolean isRescheduled() {
+		return rescheduled;
+	}
+
+	public void setRescheduled(boolean rescheduled) {
+		this.rescheduled = rescheduled;
+	}
+
 }
