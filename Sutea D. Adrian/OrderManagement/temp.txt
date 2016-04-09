@@ -1,0 +1,8 @@
+iPhone 156
+Samsung 231
+Sony 288
+HTC 302
+LG 123
+Huawei 12
+Thing 12
+AnotherThing 66
